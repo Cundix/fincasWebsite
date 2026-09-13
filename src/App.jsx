@@ -3,7 +3,6 @@ import './App.css'
 import './sections.css'
 import HorariosSection from './components/HorariosSection'
 import NovedadesSection from './components/NovedadesSection'
-import BlogSection from './components/BlogSection'
 import CampoSection from './components/CampoSection'
 
 // ─── Real Fincas de San Vicente images ───
@@ -120,12 +119,6 @@ function App() {
     }
   }
 
-  const openBlog = () => {
-    closeMenu()
-    setCurrentView('blog')
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   const openCampo = () => {
     closeMenu()
     setCurrentView('campo')
@@ -219,15 +212,6 @@ function App() {
               </button>
             </li>
             <li>
-              <button
-                type="button"
-                className={`nav__link nav__link--btn ${currentView === 'blog' ? 'nav__link--badge' : ''}`}
-                onClick={openBlog}
-              >
-                Blog
-              </button>
-            </li>
-            <li>
               <a
                 href="#contacto"
                 className="nav__link nav__link--cta"
@@ -241,11 +225,7 @@ function App() {
       </nav>
 
       {/* ═══ CONDITIONAL VIEWS ═══ */}
-      {currentView === 'blog' ? (
-        <main>
-          <BlogSection onBackToHome={goHome} />
-        </main>
-      ) : currentView === 'campo' ? (
+      {currentView === 'campo' ? (
         <main>
           <CampoSection onBackToHome={goHome} />
         </main>
@@ -443,7 +423,6 @@ function App() {
                 <li><a href="#novedades" onClick={(e) => { e.preventDefault(); navigateTo('#novedades'); }}>Novedades</a></li>
                 <li><a href="#clubhouse" onClick={(e) => { e.preventDefault(); navigateTo('#clubhouse'); }}>Club House</a></li>
                 <li><a href="#campo" onClick={(e) => { e.preventDefault(); openCampo(); }}>Conocé Nuestro Campo</a></li>
-                <li><a href="#blog" onClick={(e) => { e.preventDefault(); openBlog(); }}>El Cuaderno (Blog)</a></li>
               </ul>
             </div>
             <div className="footer__links-group">

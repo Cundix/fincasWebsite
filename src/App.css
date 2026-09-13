@@ -1,0 +1,408 @@
+/* ═══════════════════════════════════════════════ */
+/* NAVIGATION                                      */
+/* ═══════════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 3rem;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(37, 49, 28, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), 0 1px 0 rgba(200, 216, 176, 0.15);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.3s ease;
+}
+
+.nav.scrolled,
+.nav.nav--visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.nav__logo-img {
+  height: 44px;
+  width: auto;
+  transition: transform var(--t-fast) var(--ease-smooth), opacity var(--t-fast) var(--ease-smooth);
+}
+
+.nav__logo-img:hover {
+  opacity: 0.92;
+}
+
+.nav.scrolled .nav__logo-img {
+  height: 38px;
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav__link {
+  font-family: var(--f-sans);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 230, 0.85);
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--c-cuero);
+  transition: width var(--t-med) var(--ease-out);
+}
+
+.nav__link:hover {
+  color: var(--c-natural);
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.nav__link--cta {
+  background: rgba(184, 125, 75, 0.15);
+  border: 1px solid var(--c-cuero);
+  color: var(--c-natural);
+  padding: 0.65rem 1.6rem;
+  border-radius: 2px;
+  font-weight: 700;
+  transition: all var(--t-fast) var(--ease-smooth);
+}
+
+.nav__link--cta::after { display: none; }
+
+.nav__link--cta:hover {
+  background: var(--c-cuero);
+  color: var(--c-natural);
+  border-color: var(--c-cuero);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(184, 125, 75, 0.35);
+}
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.nav__toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--c-natural);
+  transition: all var(--t-fast) var(--ease-smooth);
+}
+
+/* ═══════════════════════════════════════════════ */
+/* HERO                                            */
+/* ═══════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(37, 49, 28, 0.62) 0%,
+    rgba(37, 49, 28, 0.4) 40%,
+    rgba(37, 49, 28, 0.82) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 820px;
+  padding: 0 var(--s-md);
+}
+
+.hero__content--logo-only {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.hero__center-logo {
+  max-width: clamp(280px, 46vw, 540px);
+  width: 82vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5));
+  opacity: 0;
+  transform: scale(0.92);
+  animation: heroLogoFade 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+.hero__location-tag {
+  font-family: var(--f-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 230, 0.92);
+  margin-top: 1.2rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  animation: heroLogoFade 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+  display: inline-block;
+}
+
+@keyframes heroLogoFade {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+    align-items: flex-start;
+  }
+
+  .hero__content--logo-only {
+    padding-top: 25vh;
+    padding-top: 25dvh;
+  }
+
+  .hero__center-logo {
+    max-width: clamp(240px, 76vw, 340px);
+    width: 76vw;
+  }
+
+  .hero__location-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    margin-top: 0.85rem;
+  }
+
+  .hero__scroll-indicator {
+    bottom: 1.5rem;
+  }
+}
+
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeIn 1s var(--ease-out) 1.8s forwards;
+}
+
+.hero__scroll-line {
+  width: 1.5px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--c-cuero), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+.hero__scroll-indicator span {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 230, 0.55);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+/* ═══════════════════════════════════════════════ */
+/* LEGADO                                          */
+/* ═══════════════════════════════════════════════ */
+.legado {
+  padding: var(--s-2xl) 3rem;
+  background: var(--c-natural);
+}
+
+.legado__container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--s-xl);
+  align-items: center;
+}
+
+.legado__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+}
+
+.legado__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-slow) var(--ease-out);
+}
+
+.legado__image-wrapper:hover .legado__image {
+  transform: scale(1.03);
+}
+
+.legado__image-frame {
+  position: absolute;
+  inset: 1rem;
+  border: 1.5px solid rgba(90, 110, 72, 0.35);
+  pointer-events: none;
+}
+
+.legado__stat {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-top: var(--s-md);
+  padding-top: var(--s-md);
+  border-top: 1px solid var(--c-warm-border);
+}
+
+.legado__stat-number {
+  font-family: var(--f-serif);
+  font-size: 3.8rem;
+  font-weight: 400;
+  color: var(--c-cuero);
+  line-height: 1;
+}
+
+.legado__stat-label {
+  font-family: var(--f-sans);
+  font-size: 0.85rem;
+  color: var(--c-text-light);
+  line-height: 1.5;
+}
+
+.legado__body p {
+  margin-bottom: 1.2rem;
+  font-size: 0.98rem;
+  color: var(--c-text-light);
+  line-height: 1.8;
+}
+
+.legado__body strong {
+  color: var(--c-sombra);
+  font-weight: 700;
+}
+
+.legado__features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: var(--s-lg);
+  padding-top: var(--s-md);
+  border-top: 1px solid var(--c-warm-border);
+}
+
+.legado__feature {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.legado__feature-icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--c-salvia);
+  background: rgba(90, 110, 72, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-salvia);
+  border-radius: 2px;
+}
+
+.legado__feature h4 {
+  font-family: var(--f-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--c-sombra);
+  margin-bottom: 0.2rem;
+}
+
+.legado__feature p {
+  font-size: 0.85rem;
+  color: var(--c-text-light);
+}

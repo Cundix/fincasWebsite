@@ -1,0 +1,10 @@
+Fuentes de marca — Fincas de San Vicente Golf
+
+- Libre Caslon Text (Regular, Bold, Italic) — títulos, números, destacados
+- Lato (Regular, Bold, Italic, Bold Italic) — cuerpo y etiquetas
+
+Instalación:
+- Windows: seleccionar los .ttf, clic derecho → "Instalar".
+- Mac: doble clic en cada .ttf → "Instalar fuente".
+
+Ambas son gratuitas y de código abierto (Google Fonts, licencia SIL OFL).

@@ -357,9 +357,9 @@ function App() {
               <AmenityCard
                 n="03"
                 img={IMAGES.futbol}
-                title="Canchas de Fútbol"
+                title="Canchas de Fútbol y Tenis"
                 desc="Espacios de primer nivel para la práctica deportiva y el encuentro comunitario. Canchas en un predio que respira compañerismo, competencia sana y aire puro."
-                tags={['Fútbol 11','Fútbol','Deporte']}
+                tags={['Fútbol','Tenis','Deporte']}
                 delay={2}
               />
             </div>

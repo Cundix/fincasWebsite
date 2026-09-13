@@ -315,17 +315,17 @@ function App() {
               <blockquote className="visual-break__quote">
                 "18 hoyos diseñados por Emilio N. Serra.<br/>Par 71. 6.474 yardas de pura excelencia."
               </blockquote>
-              <div style={{ marginTop: '1.8rem' }}>
+              <div className="visual-break__cta">
                 <button
                   type="button"
-                  className="btn-primary"
+                  className="visual-break__btn"
                   onClick={openCampo}
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem' }}
+                  aria-label="Conocé Nuestro Campo - 18 Hoyos en Video"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M8 5v14l11-7z" />
                   </svg>
-                  Conocé Nuestro Campo (18 Hoyos en Video)
+                  <span>Conocé Nuestro Campo (18 Hoyos en Video)</span>
                 </button>
               </div>
             </div>

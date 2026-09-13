@@ -4,6 +4,7 @@ import './sections.css'
 import HorariosSection from './components/HorariosSection'
 import NovedadesSection from './components/NovedadesSection'
 import BlogSection from './components/BlogSection'
+import CampoSection from './components/CampoSection'
 
 // ─── Real Fincas de San Vicente images ───
 const IMAGES = {
@@ -21,7 +22,7 @@ const IMAGES = {
 }
 
 function App() {
-  const [currentView, setCurrentView] = useState('home') // 'home' | 'blog'
+  const [currentView, setCurrentView] = useState('home') // 'home' | 'blog' | 'campo'
   const heroRef = useRef(null)
 
   useEffect(() => {
@@ -125,6 +126,12 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const openCampo = () => {
+    closeMenu()
+    setCurrentView('campo')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   const goHome = () => {
     closeMenu()
     setCurrentView('home')
@@ -134,7 +141,7 @@ function App() {
   return (
     <>
       {/* ═══ NAVIGATION ═══ */}
-      <nav id="main-nav" className={`nav ${currentView === 'blog' ? 'nav--visible scrolled' : ''}`}>
+      <nav id="main-nav" className={`nav ${currentView !== 'home' ? 'nav--visible scrolled' : ''}`}>
         <div className="nav__inner">
           <a
             href="#hero"
@@ -205,6 +212,15 @@ function App() {
             <li>
               <button
                 type="button"
+                className={`nav__link nav__link--btn ${currentView === 'campo' ? 'nav__link--badge' : ''}`}
+                onClick={openCampo}
+              >
+                Nuestro Campo
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
                 className={`nav__link nav__link--btn ${currentView === 'blog' ? 'nav__link--badge' : ''}`}
                 onClick={openBlog}
               >
@@ -228,6 +244,10 @@ function App() {
       {currentView === 'blog' ? (
         <main>
           <BlogSection onBackToHome={goHome} />
+        </main>
+      ) : currentView === 'campo' ? (
+        <main>
+          <CampoSection onBackToHome={goHome} />
         </main>
       ) : (
         <main>
@@ -295,6 +315,19 @@ function App() {
               <blockquote className="visual-break__quote">
                 "18 hoyos diseñados por Emilio N. Serra.<br/>Par 71. 6.474 yardas de pura excelencia."
               </blockquote>
+              <div style={{ marginTop: '1.8rem' }}>
+                <button
+                  type="button"
+                  className="btn-primary"
+                  onClick={openCampo}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem' }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  Conocé Nuestro Campo (18 Hoyos en Video)
+                </button>
+              </div>
             </div>
           </section>
 
@@ -412,6 +445,7 @@ function App() {
                 <li><a href="#horarios" onClick={(e) => { e.preventDefault(); navigateTo('#horarios'); }}>Horarios</a></li>
                 <li><a href="#novedades" onClick={(e) => { e.preventDefault(); navigateTo('#novedades'); }}>Novedades</a></li>
                 <li><a href="#clubhouse" onClick={(e) => { e.preventDefault(); navigateTo('#clubhouse'); }}>Club House</a></li>
+                <li><a href="#campo" onClick={(e) => { e.preventDefault(); openCampo(); }}>Conocé Nuestro Campo</a></li>
                 <li><a href="#blog" onClick={(e) => { e.preventDefault(); openBlog(); }}>El Cuaderno (Blog)</a></li>
               </ul>
             </div>

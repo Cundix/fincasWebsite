@@ -63,6 +63,175 @@ export const INSTAGRAM_CONFIG = {
   ]
 }
 
+export const YOUTUBE_CANAL_URL = 'https://www.youtube.com/@fincassanvicentegolf351'
+
+// Videos oficiales del canal de YouTube de Fincas de San Vicente Golf
+// Recorrido aéreo exclusivo de los 18 hoyos (videos oficiales de menos de 1 minuto)
+export const HOYOS_CAMPO = [
+  {
+    numero: 1,
+    titulo: 'Hoyo 1',
+    descripcion: 'Hoyo 1 de #Fincasdesanvicentegolf ⛳',
+    youtubeId: 'G3x45S_e1G0',
+    duracion: '0:29',
+    lado: 'ida',
+    etiqueta: 'Ida · Hoyo 1'
+  },
+  {
+    numero: 2,
+    titulo: 'Hoyo 2',
+    descripcion: 'Hoyo 2 de #fincasdesanvicente',
+    youtubeId: 'vznAtBTzZnc',
+    duracion: '0:28',
+    lado: 'ida',
+    etiqueta: 'Ida · Hoyo 2'
+  },
+  {
+    numero: 3,
+    titulo: 'Hoyo 3',
+    descripcion: 'Hoyo 3 de #fincasdesanvicente',
+    youtubeId: '4D7G2mc8Ig8',
+    duracion: '0:33',
+    lado: 'ida',
+    etiqueta: 'Ida · Hoyo 3'
+  },
+  {
+    numero: 4,
+    titulo: 'Hoyo 4',
+    descripcion: 'Hoyo 4 de #fincasdesanvicente',
+    youtubeId: 'ZmrP4-GUQDo',
+    duracion: '0:30',
+    lado: 'ida',
+    etiqueta: 'Ida · Hoyo 4'
+  },
+  {
+    numero: 5,
+    titulo: 'Hoyo 5',
+    descripcion: 'Hoyo 5 de #fincasdesanvicente',
+    youtubeId: 'MXASegqgrg0',
+    duracion: '0:33',
+    lado: 'ida',
+    etiqueta: 'Ida · Hoyo 5'
+  },
+  {
+    numero: 6,
+    titulo: 'Hoyo 6',
+    descripcion: 'Hoyo 6 de #fincasdesanvicente',
+    youtubeId: '5CY6wMCWHJE',
+    duracion: '0:31',
+    lado: 'ida',
+    etiqueta: 'Ida · Hoyo 6'
+  },
+  {
+    numero: 7,
+    titulo: 'Hoyo 7',
+    descripcion: 'Hoyo 7 de #fincasdesanvicente',
+    youtubeId: 'WfZxTnClu9c',
+    duracion: '0:25',
+    lado: 'ida',
+    etiqueta: 'Ida · Hoyo 7'
+  },
+  {
+    numero: 8,
+    titulo: 'Hoyo 8',
+    descripcion: 'Hoyo 8 de #fincasdesanvicente',
+    youtubeId: 'ecsNoEf5744',
+    duracion: '0:33',
+    lado: 'ida',
+    etiqueta: 'Ida · Hoyo 8'
+  },
+  {
+    numero: 9,
+    titulo: 'Hoyo 9',
+    descripcion: 'Hoyo 9 de #fincasdesanvicente',
+    youtubeId: '7ZFgCukMyas',
+    duracion: '0:34',
+    lado: 'ida',
+    etiqueta: 'Ida · Hoyo 9'
+  },
+  {
+    numero: 10,
+    titulo: 'Hoyo 10',
+    descripcion: 'Hoyo 10 de #fincasdesanvicente',
+    youtubeId: 'ZReKtXORX-I',
+    duracion: '0:37',
+    lado: 'vuelta',
+    etiqueta: 'Vuelta · Hoyo 10'
+  },
+  {
+    numero: 11,
+    titulo: 'Hoyo 11',
+    descripcion: 'Hoyo 11 de #fincasdesanvicente',
+    youtubeId: 'y0HIYF1WAIg',
+    duracion: '0:35',
+    lado: 'vuelta',
+    etiqueta: 'Vuelta · Hoyo 11'
+  },
+  {
+    numero: 12,
+    titulo: 'Hoyo 12',
+    descripcion: 'Hoyo 12 de #fincasdesanvicente',
+    youtubeId: 'rp7wrNwM4jE',
+    duracion: '0:32',
+    lado: 'vuelta',
+    etiqueta: 'Vuelta · Hoyo 12'
+  },
+  {
+    numero: 13,
+    titulo: 'Hoyo 13',
+    descripcion: 'Hoyo 13 de #fincasdesanvicente',
+    youtubeId: 'nq2UtNrilK8',
+    duracion: '0:30',
+    lado: 'vuelta',
+    etiqueta: 'Vuelta · Hoyo 13'
+  },
+  {
+    numero: 14,
+    titulo: 'Hoyo 14',
+    descripcion: 'Hoyo 14 de #fincasdesanvicente',
+    youtubeId: 'V18iUMThw24',
+    duracion: '0:35',
+    lado: 'vuelta',
+    etiqueta: 'Vuelta · Hoyo 14'
+  },
+  {
+    numero: 15,
+    titulo: 'Hoyo 15',
+    descripcion: 'Hoyo 15 de #fincasdesanvicente',
+    youtubeId: '6Yux48GO5Zc',
+    duracion: '0:30',
+    lado: 'vuelta',
+    etiqueta: 'Vuelta · Hoyo 15'
+  },
+  {
+    numero: 16,
+    titulo: 'Hoyo 16',
+    descripcion: 'Hoyo 16 de #fincasdesanvicente',
+    youtubeId: 'yn2y2nRCyNQ',
+    duracion: '0:34',
+    lado: 'vuelta',
+    etiqueta: 'Vuelta · Hoyo 16'
+  },
+  {
+    numero: 17,
+    titulo: 'Hoyo 17',
+    descripcion: 'Hoyo 17 de #fincasdesanvicente',
+    youtubeId: 'okS_sJ_3sbw',
+    duracion: '0:34',
+    lado: 'vuelta',
+    etiqueta: 'Vuelta · Hoyo 17'
+  },
+  {
+    numero: 18,
+    titulo: 'Hoyo 18',
+    descripcion: 'Hoyo 18 de #fincasdesanvicente',
+    youtubeId: 'Q-SVx61Ltzo',
+    duracion: '0:30',
+    lado: 'vuelta',
+    etiqueta: 'Vuelta · Hoyo 18'
+  },
+]
+
 
 export const BLOG_POSTS = [
   {

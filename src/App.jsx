@@ -344,14 +344,12 @@ function App() {
                 img={IMAGES.golf}
                 title="Campo de Golf"
                 desc="18 hoyos diseñados para desafiar y maravillar en cada swing. Un recorrido par 71 concebido por Emilio N. Serra que atraviesa paisajes inolvidables."
-                tags={['Par 71','6.474 yds','Diseño Serra']}
               />
               <AmenityCard
                 n="02"
                 img={IMAGES.gym}
                 title="Gimnasio & Natación"
                 desc="Instalaciones deportivas que permiten complementar la actividad de golf"
-                tags={['Piscina','Equipamiento','Plaza deportiva']}
                 delay={1}
               />
               <AmenityCard
@@ -359,7 +357,6 @@ function App() {
                 img={IMAGES.futbol}
                 title="Canchas de Fútbol y Tenis"
                 desc="Espacios de primer nivel para la práctica deportiva y el encuentro comunitario. Canchas en un predio que respira compañerismo, competencia sana y aire puro."
-                tags={['Fútbol','Tenis','Deporte']}
                 delay={2}
               />
             </div>
@@ -402,7 +399,7 @@ function App() {
             <div className="ubicacion__container">
               <div className="ubicacion__text reveal">
                 <span className="section-tag">Ubicación Privilegiada</span>
-                <h2 className="section-title">En el corazón<br/><em>de San Vicente.</em></h2>
+                <h2 className="section-title">En el centro<br/><em>de San Vicente.</em></h2>
                 <p>Sobre la Ruta 58 y la calle Capdevila, a minutos de los principales accesos desde Canning y la zona sur del Gran Buenos Aires.</p>
                 <div className="ubicacion__details">
                   <div className="ubicacion__detail">
@@ -513,7 +510,7 @@ function Feature({ icon, title, desc }) {
   )
 }
 
-function AmenityCard({ n, img, title, desc, tags, delay = 0 }) {
+function AmenityCard({ n, img, title, desc, delay = 0 }) {
   return (
     <div className={`amenity-card reveal${delay ? ` reveal--delay-${delay}` : ''}`}>
       <div className="amenity-card__image-wrapper">
@@ -524,9 +521,6 @@ function AmenityCard({ n, img, title, desc, tags, delay = 0 }) {
         <span className="amenity-card__number">{n}</span>
         <h3 className="amenity-card__title">{title}</h3>
         <p className="amenity-card__desc">{desc}</p>
-        <div className="amenity-card__details">
-          {tags.map((t, i) => <span key={i}>{t}</span>)}
-        </div>
       </div>
     </div>
   )

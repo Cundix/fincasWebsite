@@ -140,7 +140,7 @@
   font-size: 0.92rem;
   color: var(--c-text-light);
   line-height: 1.75;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0;
 }
 
 .amenity-card__details {

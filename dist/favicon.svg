@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#3A4A2C"/>
+  <rect x="3" y="3" width="58" height="58" rx="11" fill="none" stroke="#B87D4B" stroke-width="1.5" stroke-opacity="0.6"/>
+  <!-- Stylized FSV Golf Pin and Green -->
+  <path d="M22 46C26 44 38 44 42 46" stroke="#C8D8B0" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="32" y1="16" x2="32" y2="44" stroke="#F5F0E6" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M32 16L44 22L32 28Z" fill="#B87D4B"/>
+  <circle cx="32" cy="45" r="2.5" fill="#C8D8B0"/>
+</svg>

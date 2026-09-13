@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. If request is already within dist/, pass through
+  RewriteCond %{REQUEST_URI} ^/dist/ [NC]
+  RewriteRule ^ - [L]
+
+  # 2. If dist folder exists, route requests to dist/
+  RewriteRule ^$ dist/index.html [L]
+
+  # 3. Route assets and existing files in dist
+  RewriteCond %{DOCUMENT_ROOT}/dist/$1 -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}/dist/$1 -d
+  RewriteRule ^(.*)$ dist/$1 [L]
+
+  # 4. SPA fallback: Route all other non-existent routes to dist/index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^.*$ dist/index.html [L]
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>

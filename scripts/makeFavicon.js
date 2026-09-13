@@ -5,15 +5,15 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const imgPath = path.join(__dirname, '..', 'public', 'images', 'logo.png');
+const imgPath = path.join(__dirname, '..', 'public', 'images', 'FSV_Golf_Logo_verde_salvia.png');
 const svgPath = path.join(__dirname, '..', 'public', 'favicon.svg');
 
 const img = fs.readFileSync(imgPath);
 const b64 = img.toString('base64');
-const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
-  <image width="128" height="128" href="data:image/png;base64,${b64}" />
+const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <image width="200" height="100" href="data:image/png;base64,${b64}" />
 </svg>
 `;
 
 fs.writeFileSync(svgPath, svgContent, 'utf8');
-console.log('favicon.svg successfully generated with real logo');
+console.log('favicon.svg successfully generated with FSV_Golf_Logo_verde_salvia.png');

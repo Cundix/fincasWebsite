@@ -1,20 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { HOYOS_CAMPO } from '../data/content'
 
 export default function CampoSection({ onBackToHome }) {
-  const [filter, setFilter] = useState('todos') // 'todos' | 'ida' | 'vuelta'
-
-  const filteredHoyos = filter === 'todos'
-    ? HOYOS_CAMPO
-    : HOYOS_CAMPO.filter(h => h.lado === filter)
-
-  const scrollToHole = (numero) => {
-    const el = document.getElementById(`hoyo-${numero}`)
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
-
   return (
     <div className="campo-page">
       {/* ─── Minimal Header ─── */}
@@ -30,49 +17,12 @@ export default function CampoSection({ onBackToHome }) {
             Conocé Nuestro <em>Campo</em>
           </h1>
         </div>
-
-        {/* ─── Quick Jump Pills Bar ─── */}
-        <div className="campo-nav-bar">
-          <div className="campo-nav-filters">
-            <button
-              className={`campo-filter-chip ${filter === 'todos' ? 'is-active' : ''}`}
-              onClick={() => setFilter('todos')}
-            >
-              Todos (1-18)
-            </button>
-            <button
-              className={`campo-filter-chip ${filter === 'ida' ? 'is-active' : ''}`}
-              onClick={() => setFilter('ida')}
-            >
-              Ida (1-9)
-            </button>
-            <button
-              className={`campo-filter-chip ${filter === 'vuelta' ? 'is-active' : ''}`}
-              onClick={() => setFilter('vuelta')}
-            >
-              Vuelta (10-18)
-            </button>
-          </div>
-
-          <div className="campo-quick-pills">
-            {filteredHoyos.map((hoyo) => (
-              <button
-                key={hoyo.numero}
-                className="campo-quick-pill"
-                onClick={() => scrollToHole(hoyo.numero)}
-                aria-label={`Ir a Hoyo ${hoyo.numero}`}
-              >
-                H{hoyo.numero}
-              </button>
-            ))}
-          </div>
-        </div>
       </header>
 
       {/* ─── 18 Holes Direct Video Embeddings ─── */}
       <main className="campo-videos-container">
         <div className="campo-videos-grid">
-          {filteredHoyos.map((hoyo) => (
+          {HOYOS_CAMPO.map((hoyo) => (
             <article
               key={hoyo.numero}
               id={`hoyo-${hoyo.numero}`}

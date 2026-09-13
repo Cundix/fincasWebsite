@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "deploy-branch": "vite build && node scripts/build_production_branch.js && git push origin production --force",
     "lint": "eslint .",
     "preview": "vite preview"
   },

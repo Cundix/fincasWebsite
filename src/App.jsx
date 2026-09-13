@@ -159,15 +159,6 @@ function App() {
             </li>
             <li>
               <a
-                href="#horarios"
-                className="nav__link"
-                onClick={(e) => { e.preventDefault(); navigateTo('#horarios'); }}
-              >
-                Horarios
-              </a>
-            </li>
-            <li>
-              <a
                 href="#novedades"
                 className="nav__link"
                 onClick={(e) => { e.preventDefault(); navigateTo('#novedades'); }}

@@ -150,20 +150,11 @@ function App() {
           <ul id="nav-menu" className="nav__menu">
             <li>
               <a
-                href="#legado"
+                href="#horarios"
                 className="nav__link"
-                onClick={(e) => { e.preventDefault(); navigateTo('#legado'); }}
+                onClick={(e) => { e.preventDefault(); navigateTo('#horarios'); }}
               >
-                El Legado
-              </a>
-            </li>
-            <li>
-              <a
-                href="#instalaciones"
-                className="nav__link"
-                onClick={(e) => { e.preventDefault(); navigateTo('#instalaciones'); }}
-              >
-                Instalaciones
+                Horarios
               </a>
             </li>
             <li>
@@ -265,12 +256,11 @@ function App() {
                 </div>
               </div>
               <div className="legado__text-col reveal reveal--delay-1">
-                <span className="section-tag">El Legado</span>
+                <span className="section-tag">Mucho más que golf</span>
                 <h2 className="section-title">Un estilo de vida,<br/><em>un barrio en crecimiento</em></h2>
                 <div className="legado__body">
                   <p>En el corazón de San Vicente, existe un lugar pensado para quienes entienden que la verdadera riqueza es el tiempo bien vivido.</p>
                   <p><strong>Fincas de San Vicente Golf</strong> es una comunidad que busca la desconexión genuina del ruido de la ciudad, y un entorno natural que da bienestar a vecinos y visitantes.</p>
-                  <p>Con 625 hectáreas de masterplan integrado, donde conviven el deporte, la gastronomía, la vida social y la calma absoluta.</p>
                 </div>
                 <div className="legado__features">
                   <Feature icon="shield" title="Seguridad 24/7" desc="Perímetro completo, acceso controlado y monitoreo permanente." />

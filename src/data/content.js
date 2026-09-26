@@ -6,8 +6,8 @@ export const HORARIOS_DATA = {
     badge: '18 Hoyos · Par 71',
     description: 'Control de salidas, reservas de tee time, alquiler de carros y driving range.',
     dias: [
-      { dia: 'Martes a Viernes', horario: '07:30 - 18:30 hs', detalle: 'Salidas individuales y líneas libres' },
-      { dia: 'Sábados, Domingos y Feriados', horario: '07:00 - 19:00 hs', detalle: 'Torneos oficiales y salidas por tee time' },
+      { dia: 'Martes a Sábados', horario: '08:00 - 17:00 hs', detalle: 'Salidas individuales y líneas libres' },
+      { dia: 'Domingos y Feriados', horario: '08:00 - 16:00 hs', detalle: 'Torneos oficiales y salidas por tee time' },
       { dia: 'Lunes', horario: 'Cerrado', detalle: 'Mantenimiento integral de greens y fairways' },
     ],
     drivingRange: {
@@ -26,8 +26,8 @@ export const HORARIOS_DATA = {
     badge: 'Gestión Institucional',
     description: 'Atención a propietarios, trámites administrativos, cobranzas, ingreso de proveedores y obras.',
     dias: [
-      { dia: 'Lunes a Viernes', horario: '09:00 - 17:00 hs', detalle: 'Atención presencial y telefónica' },
-      { dia: 'Sábados', horario: '09:00 - 13:00 hs', detalle: 'Guardia administrativa y consultas generales' },
+      { dia: 'Lunes a Viernes', horario: '08:00 - 12:00 hs / 13:00 - 16:00 hs', detalle: 'Atención presencial y telefónica' },
+      { dia: 'Sábados', horario: '08:00 - 12:00 hs', detalle: 'Guardia administrativa y consultas generales' },
       { dia: 'Domingos y Feriados', horario: 'Cerrado', detalle: 'Guardia operativa de guardia permanente 24 hs' },
     ],
     guardiaSeguridad: {

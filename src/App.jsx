@@ -195,6 +195,16 @@ function App() {
             </li>
             <li>
               <a
+                href="https://www.fincasclubdegolf.com/golf/login.php"
+                className="nav__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Torneos
+              </a>
+            </li>
+            <li>
+              <a
                 href="#contacto"
                 className="nav__link nav__link--cta"
                 onClick={(e) => { e.preventDefault(); navigateTo('#contacto'); }}
